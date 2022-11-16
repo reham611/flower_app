@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flower_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../shared/custom_textfield.dart';
@@ -14,23 +15,22 @@ class Login extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(33.0),
           child: Column(
+            // ignore: prefer_const_literals_to_create_immutables
             children: [
               const SizedBox(
                 height: 64,
               ),
-              MyTextField(
-                textInputTypee: TextInputType.emailAddress,
-                ispassword: false,
-                hinttexttt: "Enter Your Email : ",
-              ),
+              TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: false,
+                  decoration: DecorationTextfield),
               const SizedBox(
                 height: 33,
               ),
-              MyTextField(
-                textInputTypee: TextInputType.text,
-                ispassword: true,
-                hinttexttt: "Enter Your Password : ",
-              ),
+              TextField(
+                  keyboardType: TextInputType.text,
+                  obscureText: true,
+                  decoration: DecorationTextfield),
             ],
           ),
         ),
