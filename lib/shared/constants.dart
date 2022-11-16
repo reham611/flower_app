@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const DecorationTextfield = InputDecoration(
+const decorationTextfield = InputDecoration(
   // To delete borders
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide.none,
