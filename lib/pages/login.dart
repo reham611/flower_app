@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flower_app/pages/register.dart';
 import 'package:flower_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -61,7 +62,13 @@ class Login extends StatelessWidget {
                     Text("Do not have an account?",
                         style: TextStyle(fontSize: 20)),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Register()),
+                        );
+                      },
                       child: Text('Sign up',
                           style: TextStyle(color: Colors.black, fontSize: 20)),
                     )
