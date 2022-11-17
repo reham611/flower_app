@@ -1,3 +1,4 @@
+import 'package:flower_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -7,6 +8,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [Text("\$ 13")],
+        backgroundColor: appbarGreen,
         title: Text("data"),
       ),
     );
