@@ -18,7 +18,9 @@ class Home extends StatelessWidget {
           itemCount: 4,
           itemBuilder: (BuildContext context, int index) {
             return GridTile(
-              child: Image.asset("assets/imag/one.jpg"),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(55),
+                  child: Image.asset("assets/imag/one.jpg")),
             );
           }),
       drawer: Drawer(
