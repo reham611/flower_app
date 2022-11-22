@@ -9,20 +9,63 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 33),
+          itemCount: 4,
+          itemBuilder: (BuildContext context, int index) {
+            return GridTile(
+              child: Image.asset("assets/imag/one.jpg"),
+            );
+          }),
       drawer: Drawer(
         child: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                  radius: 55,
-                  backgroundImage: AssetImage("assets/imag/download.jpg")),
-              accountEmail: Text("riham@yahoo.com"),
-              accountName: Text("Riham Ramadan",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                  )),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/img/test.jpg"),
+                        fit: BoxFit.cover),
+                  ),
+                  currentAccountPicture: CircleAvatar(
+                      radius: 55,
+                      backgroundImage: AssetImage("assets/imag/OIP (1).jpg")),
+                  accountEmail: Text("riham@yahoo.com"),
+                  accountName: Text("Riham Ramadan",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      )),
+                ),
+                ListTile(
+                    title: Text("Home"),
+                    leading: Icon(Icons.home),
+                    onTap: () {}),
+                ListTile(
+                    title: Text("My products"),
+                    leading: Icon(Icons.add_shopping_cart),
+                    onTap: () {}),
+                ListTile(
+                    title: Text("About"),
+                    leading: Icon(Icons.help_center),
+                    onTap: () {}),
+                ListTile(
+                    title: Text("Logout"),
+                    leading: Icon(Icons.exit_to_app),
+                    onTap: () {}),
+              ],
             ),
+            Container(
+              margin: EdgeInsets.only(bottom: 12),
+              child: Text("Developed by Riham Ramadan © 2022",
+                  style: TextStyle(fontSize: 16)),
+            )
           ],
         ),
       ),
